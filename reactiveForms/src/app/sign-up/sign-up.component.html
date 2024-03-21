@@ -1,0 +1,37 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-lg-8">
+      <h2 class="fw-bold mt-3 text-center text-primary">Sign up now</h2>
+      <form [formGroup]="myForm" (ngSumbit)="onSumbit(myForm)">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label">First name</label>
+              <input type="text" formControlName="nameF" class="form-control" />
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label">Last name</label>
+              <input type="text" formControlName="nameL" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label">Email address</label>
+          <input type="email" formControlName="email" class="form-control" />
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label">Enter New Password</label>
+          <input type="password" formControlName="password" class="form-control" />
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label"> Reenter Password</label>
+            <input type="password" formControlName="passwordL" class="form-control" />
+          </div>
+        <button type="submit" [disabled]="myForm.invalid" [ngClass]="myForm.invalid ? 'btn-danger' : 'btn-success' "
+         class="btn btn-primary mb-5">
+          Sign up
+        </button>
+      </form> 
+    </div>   
+</div>      
